@@ -44,11 +44,7 @@ I ran 5 multi-hop questions and checked answers against Cypher queries.
 Graph search handles multi-hop questions better, but needs upfront data
 modelling and ongoing upkeep.
 
-## Credits
-Built on the open-source Bollywood GraphRAG project by Ramendra611
-(Codeverra, https://codeverra.com). The graph data, pipeline, and
-original design are theirs. The setup, local-model switch, fixes,
-evaluation, and write-up above are mine.
+
 
 ---
 
