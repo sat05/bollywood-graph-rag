@@ -16,7 +16,7 @@ from db import Neo4jConnection
 from embeddings import find_top_nodes
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -123,6 +123,7 @@ Guidelines:
 - If the context is insufficient, say so clearly — do not speculate.
 - Do not mention the graph, database, or retrieval process in your answer.
 - For list-type answers, use bullet points.
+- Only list a film if the context shows BOTH people connected to it. Never use outside knowledge. Name a person in a role only if that exact relationship (ACTED_IN, DIRECTED, COMPOSED_MUSIC_FOR) appears in the context.
 - Keep answers friendly and conversational."""
 
 
@@ -138,7 +139,7 @@ KNOWLEDGE GRAPH CONTEXT:
 Please provide a clear, accurate answer based only on the information above."""
 
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="llama3.2",
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user",   "content": user_msg},

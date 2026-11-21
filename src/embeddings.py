@@ -14,9 +14,9 @@ from dotenv import load_dotenv
 from db import Neo4jConnection
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(base_url="http://localhost:11434/v1", api_key="ollama")
 
-EMBED_MODEL = "text-embedding-3-small"
+EMBED_MODEL = "nomic-embed-text"
 
 
 # ─────────────────────────────────────────────────────────────────────────────

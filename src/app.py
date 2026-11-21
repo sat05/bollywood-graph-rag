@@ -118,7 +118,7 @@ with st.sidebar:
 
 if page == "💬 Chat":
     st.header("💬 Ask Anything About Bollywood")
-    st.caption("Powered by a Neo4j knowledge graph + GPT-4o | Graph facts, zero hallucination")
+    st.caption("Powered by a Neo4j knowledge graph + local Llama 3.2 (Ollama) | Answers use graph facts; verify important details")
 
     # Initialise session state for conversation history
     if "messages" not in st.session_state:
